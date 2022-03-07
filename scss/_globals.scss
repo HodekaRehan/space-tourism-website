@@ -1,0 +1,51 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background-color: $black;
+    font-family: $body;
+    color: $white;
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-family: $heading;
+    color: $white;
+}
+
+h5{
+    font-family: $sub-heading;
+    color: $grey;
+    letter-spacing: 4.75px;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+    // height: auto;
+    display: block;
+}
