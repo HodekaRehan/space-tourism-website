@@ -1,51 +1,125 @@
-html{
-    font-size: 100%;
+//-------------------
+// reset
+//-------------------
+
+// resets from |  https://piccalil.li/blog/a-modern-css-reset/  |
+
+// box-sizing
+*,
+*::before,
+*::after{
     box-sizing: border-box;
 }
 
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Set core root defaults */
 html:focus-within {
     scroll-behavior: smooth;
 }
 
-*, *::before, *::after{
-    margin: 0;
+/* Set core body defaults */
+body{
+    line-height: 1.5;
+    min-height: 100vh; //it sets the stage to prevent the short pages from being an issue 
+}
+
+/* Make images easier to work with */
+img,
+picture{
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+//-------------------
+// end of resets
+//-------------------
+
+
+//screen reader only
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
     padding: 0;
-    box-sizing: inherit;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+}
+
+// line height
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
 }
 
 body{
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-    background-color: $black;
-    font-family: $body;
+    font-family: $ff-barlow-sans;
+    font-size: $fs-400;
     color: $white;
+    background-color: $black ;
+    overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4{
-    font-family: $heading;
-    color: $white;
-}
+ul{
+    padding: 0;
 
-h5{
-    font-family: $sub-heading;
-    color: $grey;
-    letter-spacing: 4.75px;
+    li{
+        list-style: none;
+    }
 }
 
 a{
+    color: $white;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
-li{
-    list-style: none;
+.container{
+    padding: 0 2em; // OR padding-inline : 2em; (modern css property)
+    margin: 0 auto; // OR margin-inline : 2em; (modern css property)
+    max-width: 87.5rem;
 }
 
-img{
-    max-width: 100%;
-    // height: auto;
-    display: block;
-}
+
+

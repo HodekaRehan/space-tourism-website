@@ -1,9 +1,27 @@
 //colors
-$black: #0B0D17;
-$grey: #D0D6F9;
-$white: #FFFFFF;
+$black: hsl(230, 35% ,7%);
+$light: hsl(231, 77%, 90%); 
+$white: hsl(0, 0%, 100%); 
 
-// fonts
-$body: 'Barlow', sans-serif;
-$sub-heading: 'Barlow Condensed', sans-serif;
-$heading: 'Bellefair', serif;
+$active: hsla(0, 0%, 100%, 1);
+$hover: hsla(0, 0%, 100%, 0.5);
+
+// font-family
+$ff-barlow-sans: 'Barlow', sans-serif;
+$ff-barlow-cond-sans: 'Barlow Condensed', sans-serif;
+$ff-bellefair-serif: 'Bellefair', serif; 
+
+//font sizes
+$fs-900: 9.375rem;
+$fs-800: 6.25rem;
+$fs-700: 3.5rem;
+$fs-600: 2rem;
+$fs-500: 1.75rem;
+$fs-400: 1.125rem;
+$fs-300: 1rem;
+$fs-200: 0.875rem;
+
+//letter spacing
+$ls-4-75: 4.75px;
+$ls-2-7: 2.7px;
+$ls-2-35: 2.35px;
