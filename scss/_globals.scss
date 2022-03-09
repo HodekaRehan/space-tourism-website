@@ -113,6 +113,13 @@ a{
     color: $white;
     text-decoration: none;
     text-transform: uppercase;
+    font-family: $ff-barlow-cond-sans;
+    letter-spacing: $ls-2-7;
+
+    span{
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
 }
 
 .container{

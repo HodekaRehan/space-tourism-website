@@ -1,14 +1,43 @@
 header{
     @include for-flex-aic-jcsb;
-    // padding: 1.5rem;
+    padding: 1.5rem;
+
+    @include breakpoint-up(medium){
+        padding: 0 0 0 2.5rem;
+
+        &::after{
+            content: '';
+            display: block;
+            position: relative;
+            height: 1px;
+            width: 100%;
+            margin-right: -1.5rem;
+            background-color: $light;
+            order: 1;
+        }
+
+        nav{
+            order: 2;
+        }
+    }
+
+    @include breakpoint-up(large){
+        padding: 2.5rem 0 0 3.4375rem;
+    }
+
+    div{
+        margin-right: 2.5rem;
+    }
 }
 
 //logo
 .logo{
     width: 2.5rem;
+    height: auto;
 
-    @include for-tablet-portrait-up{
+    @include breakpoint-up(medium){
         width: 3rem;
+        margin-right: 2.5rem;
     }
 }
 
@@ -17,7 +46,7 @@ header{
     display: block;
     position: absolute;
     z-index: 100;
-    right: 1rem;
+    right: 1.5rem;
     background: transparent;
     border: 0 ;
     background-image: url(../assets/shared/icon-hamburger.svg);
@@ -26,7 +55,7 @@ header{
     width: 1.5rem;
     aspect-ratio: 1;
 
-    @include for-tablet-portrait-up{
+    @include breakpoint-up(medium){
         display: none;
     }
 
@@ -35,10 +64,46 @@ header{
     }
 }
 
+.nav-link{
+    line-height: 2rem;
+    font-size: $fs-300;
 
+    @include breakpoint-up(medium){
+        line-height: 5.75rem;
+        font-size: $fs-200;
+    }
 
-//nav menu
-@include for-phone-down{
+    @include breakpoint-up(large){
+        font-size: $fs-300;
+    }
+
+    span{
+        @include breakpoint-down(medium){
+            display: none;
+        }
+    }
+
+    &.active{
+        border-right: 4px solid $active;
+
+        @include breakpoint-up(medium){
+            border-right: none;
+            border-bottom: 4px solid $active;
+        }
+    }
+
+    &:hover{
+        border-right: 4px solid $hover;
+
+        @include breakpoint-up(medium){
+            border-right: none;
+            border-bottom: 4px solid $hover;
+        }
+    }
+}
+
+//nav menu for screen sizes lower than 768px
+@include breakpoint-down(small){
     .nav-menu{
         position: fixed;
         display: flex;
@@ -48,7 +113,7 @@ header{
         bottom: 0;
         left: 30%;
         margin: 0;
-        // padding: 
+        padding: 7rem 0 0 2rem;
         @include for-backdrop;
         transform: translateX(100%);
         transition: transform 0.5s ease-in-out;
@@ -56,19 +121,41 @@ header{
         &[data-visible="true"] {
             transform: translateX(0);
         }
+
+        li{
+            margin-bottom: 1.625rem;
+        }
     
         .nav-link{
             display: block;
-            line-height: 2rem;
-    
-            &.active{
-                border-right: 4px solid $active;
-            }
-    
-            &:hover{
-                border-right: 4px solid $hover;
+
+            span{
+                display: inline-block;
             }
         }
+    }
+}
+
+//nav menu for screen sizes 768px and up
+@include breakpoint-up(medium){
+    .nav-menu{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0 2.875rem;
+        @include for-backdrop;
+        
+        
+    }
+
+    li{
+        &:not(:last-child) {
+            margin-right: 2.3125rem;
+        }
+    }
+
+    .nav-link{
+        display: block;
     }
 }
 
