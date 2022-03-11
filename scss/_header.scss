@@ -144,8 +144,10 @@ header{
         margin: 0;
         padding: 0 2.875rem;
         @include for-backdrop;
-        
-        
+
+        @include breakpoint-up(large) {
+            padding: 0 5rem 0 2.875rem;
+        }
     }
 
     li{

@@ -302,11 +302,49 @@ header div {
     -webkit-backdrop-filter: blur(0.625rem);
             backdrop-filter: blur(0.625rem);
   }
+}
+
+@media (min-width: 48em) and (min-width: 64em) {
+  .nav-menu {
+    padding: 0 5rem 0 2.875rem;
+  }
+}
+
+@media (min-width: 48em) {
   li:not(:last-child) {
     margin-right: 2.3125rem;
   }
   .nav-link {
     display: block;
   }
+}
+
+.home {
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 48em) {
+  .home {
+    background-image: url(../assets/home/background-home-tablet.jpg);
+  }
+}
+
+@media (min-width: 64em) {
+  .home {
+    background-image: url(../assets/home/background-home-desktop.jpg);
+  }
+}
+
+.home-main {
+  max-width: 87.5rem;
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
+.space {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
